@@ -1,0 +1,614 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+
+:root {
+  --header-height: 3rem;
+
+  /*========== Colors ==========*/
+  --title-color: #0b0a0a;
+  --text-color: #403a3a;
+  --text-color-light: #707070;
+  --container-color: #fafafa;
+  --container-color-alt: #f0efef;
+  --body-color: #fcfcfc;
+
+  /*========== Font and typography ==========*/
+  --body-font: "Poppins", sans-serif;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.875rem;
+  --smaller-font-size: 0.813rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== Margenes ==========*/
+  --mb-1: 0.5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== BASE  ==========*/
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--body-color);
+  min-height: 100vh;
+  margin: 3rem 0;
+  color: var(--text-color);
+  font-size: var(--normal-font-size);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*========== Variables Dark Theme ==========*/
+body.dark-theme {
+  --title-color: #f2f2f2;
+  --text-color: #bfbfbf;
+  --container-color: #212121;
+  --container-color-alt: #181616;
+  --body-color: #2b2b2b;
+}
+/*========== Button Dark / Light ==========*/
+
+/*========== Generate PDF Button ==========*/
+
+/*========== CLASS CSS ==========*/
+.header {
+  height: var(--header-height);
+  z-index: var(--z-tooltip);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+  padding: 0 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--body-color);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section {
+  padding: 1.5rem 0;
+}
+
+.section-title {
+  font-size: var(--h2-font-size);
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.35rem;
+  margin-bottom: var(--mb-3);
+}
+/*========== LAYOUT ==========*/
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.resume {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.resume__left {
+  background-color: var(--container-color-alt);
+  padding: 0 1.5rem;
+}
+
+.resume__right {
+  background-color: var(--container-color);
+  padding: 0 1.5rem;
+}
+/*========== NAV ==========*/
+.nav {
+  display: none;
+}
+/* Show menu */
+
+/* Active link */
+
+/*========== HOME==========*/
+.home {
+  text-align: center;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.home__data {
+  margin-bottom: var(--mb-2);
+  font-weight: var(--font-medium);
+  display: grid;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.home__img {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: var(--mb-1);
+  justify-self: center;
+}
+
+.home__name {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-medium);
+  font-weight: 300;
+}
+
+.home__title {
+  font-size: var(--small-font-size);
+}
+
+.home__contact {
+  font-size: var(--small-font-size);
+  text-align: left;
+  display: grid;
+  gap: var(--mb-2);
+}
+
+.home__item {
+  display: flex;
+  align-items: center;
+  column-gap: 0.7rem;
+}
+
+.home__icon {
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+.download-pdf-button {
+  display: none;
+}
+
+.open-nav {
+  display: none;
+}
+/*========== SOCIALS ==========*/
+.socials__list {
+  display: grid;
+  row-gap: var(--mb-2);
+}
+
+.socials__item {
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.socials__item:hover {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+.socials__icon {
+  font-size: 1.2rem;
+}
+/*========== SKILLS & LANGUAGES ==========*/
+.languages__item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.languages__item:not(:last-child) {
+  margin-bottom: var(--mb-2);
+}
+
+.languages__circle {
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background-color: var(--text-color);
+}
+/*========== PROFILE ==========*/
+
+/*========== EDUCATION & EXPERIENCE & WEB PROJECTS ==========*/
+.projects__name,
+.experience__name,
+.education__name {
+  font-size: var(--h3-font-size);
+}
+
+.projects__content,
+.experience__content,
+.education__content {
+  display: flex;
+}
+
+.projects__content:not(:last-child),
+.experience__content:not(:last-child),
+.education__content:not(:last-child) {
+  margin-bottom: var(--mb-2);
+}
+
+.projects__time,
+.experience__time,
+.education__time {
+  padding-right: 1rem;
+}
+
+.projects__rounder,
+.experience__rounder,
+.education__rounder {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background-color: var(--text-color-light);
+  position: relative;
+  margin-top: 0.25rem;
+}
+
+.projects__line,
+.experience__line,
+.education__line {
+  width: 2px;
+  height: 100%;
+  display: block;
+  background-color: var(--text-color-light);
+  transform: translateX(7px);
+}
+
+.education__line {
+  height: 100%;
+}
+
+.projects__link {
+  color: #2980b9;
+  text-decoration: underline;
+  font-size: var(--smaller-font-size);
+}
+
+.projects__item,
+.experience__desc {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: var(--mb-1);
+}
+
+.projects__icon,
+.experience__icon {
+  font-size: 1.2rem;
+  font-weight: var(--font-medium);
+}
+/*========== EXPERIENCE ==========*/
+.experience__company,
+.education__year {
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+  margin-bottom: var(--mb-1);
+}
+
+/*========== SKILLS ==========*/
+.skills__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.skills__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--mb-2);
+}
+
+.skills__icon {
+  font-size: 1.2rem;
+  margin-right: var(--mb-1);
+}
+
+/*========== DOWNLOAD PDF ==========*/
+.download-pdf {
+  position: absolute;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  cursor: pointer;
+  top: 0;
+  left: 0;
+}
+
+.download-pdf:hover,
+.toggle-theme:hover {
+  color: var(--text-color-light);
+}
+
+/*========== TOGGLE THEME ==========*/
+.toggle-theme {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 960px) {
+  body {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    display: flex;
+  }
+
+  .resume {
+    grid-template-columns: 1fr;
+    margin-top: var(--header-height);
+  }
+
+  .resume__left {
+    background-color: var(--container-color);
+  }
+
+  .home__contact {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .home__img {
+    height: 150px;
+    width: 150px;
+  }
+
+  .socials__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .download-pdf-button {
+    display: flex;
+    align-items: center;
+    gap: var(--mb-2);
+    color: var(--container-color);
+    background-color: var(--title-color);
+    justify-self: center;
+    padding: 1rem 2rem;
+    margin-top: var(--mb-1);
+    border-radius: 5px;
+  }
+
+  .download__icon {
+    font-size: 1.2rem;
+    color: var(--container-color);
+  }
+
+  .download-pdf {
+    display: none;
+  }
+
+  .open-nav {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--title-color);
+  }
+
+  .nav {
+    display: block;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    right: 0;
+    z-index: calc(var(--z-fixed) + 1);
+    background-color: var(--body-color);
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: all 0.3s;
+  }
+
+  .nav-show {
+    top: 0;
+  }
+
+  .nav__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .nav__item {
+    margin-bottom: var(--mb-3);
+  }
+
+  .nav__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-color);
+  }
+
+  .nav__icon {
+    font-size: 1.2rem;
+    margin-bottom: var(--mb-1);
+  }
+
+  .close-nav {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: var(--z-fixed);
+    display: none;
+  }
+
+  .overlay-show {
+    display: block;
+  }
+
+  .toggle-theme-desktop {
+    display: none;
+  }
+
+  .toggle-theme-mobile {
+    position: initial;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .home__contact,
+  .socials__list {
+    grid-template-columns: 1fr;
+  }
+
+  .nav__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* modified classes to reduce size and print of A4 sheet */
+.scale-cv .toggle-theme,
+.scale-cv .download-pdf {
+  display: none;
+}
+
+.scale-cv .resume {
+  max-width: 595px;
+  margin: 0 auto;
+}
+
+.scale-cv .section {
+  padding: 1.5rem 0 0.8rem;
+}
+
+.scale-cv .section-title {
+  margin-bottom: 0.75rem;
+}
+
+.scale-cv .resume__left,
+.scale-cv .resume__right {
+  padding: 0 1rem;
+}
+
+.scale-cv .home__img {
+  height: 90px;
+  width: 90px;
+}
+
+.scale-cv .home__data {
+  gap: 0.25rem;
+  margin-bottom: var(--mb-1);
+}
+
+.scale-cv .home__contact,
+.scale-cv .socials__list {
+  row-gap: var(--mb-1);
+}
+
+.scale-cv .home__icon,
+.scale-cv .socials__icon,
+.scale-cv .skills__icon {
+  font-size: 1rem;
+}
+
+.scale-cv .projects__item,
+.scale-cv .experience__desc {
+  gap: 0.5rem;
+}
+
+.scale-cv .education__time,
+.scale-cv .projects__time,
+.scale-cv .experience__time {
+  padding-right: 0.5rem;
+}
+
+.scale-cv .education__rounder,
+.scale-cv .projects__rounder,
+.scale-cv .experience__rounder {
+  width: 11px;
+  height: 11px;
+  margin-top: 0.22rem;
+}
+
+.scale-cv .education__line,
+.scale-cv .projects__line,
+.scale-cv .experience__line {
+  width: 1px;
+  height: 105%;
+  transform: translateX(5px);
+}
+
+.scale-cv .projects__icon,
+.scale-cv .experience__icon {
+  font-size: 1rem;
+}
+/*========== Font size variables to scale cv ==========*/
+body.scale-cv {
+  --h1-font-size: 0.938rem;
+  --h2-font-size: 0.938rem;
+  --h3-font-size: 0.875rem;
+  --normal-font-size: 0.813rem;
+  --small-font-size: 0.75rem;
+  --smaller-font-size: 0.688rem;
+}
