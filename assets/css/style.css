@@ -534,7 +534,7 @@ body.dark-theme {
 }
 
 .scale-cv .resume {
-  max-width: 595px;
+  max-width: 790px;
   margin: 0 auto;
 }
 
@@ -549,11 +549,13 @@ body.dark-theme {
 .scale-cv .resume__left,
 .scale-cv .resume__right {
   padding: 0 1rem;
+  min-height: 1122px;
 }
 
 .scale-cv .home__img {
   height: 90px;
   width: 90px;
+  object-fit: cover;
 }
 
 .scale-cv .home__data {
